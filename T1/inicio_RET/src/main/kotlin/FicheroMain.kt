@@ -17,7 +17,9 @@ fun main(arg: Array<String>) {
     println("Hola mi nombre es ${nombre} y tengo ${edad} años");
     println("La suma del numero 4 y el 2 es ${4 + 2}");
     */
-    estructuraFor();
+
+    funcionArrays()
+
 }
 
 fun estructuraIf(x:Int):Unit{
@@ -69,6 +71,22 @@ fun estructuraFor() {
         println(i);
     }
     for (i in 10 downTo 5){
-
+        println(i);
     }
+
+    //(int)(Math.random()*21)
+    //(1..200).random();
+}
+
+fun funcionArrays() {
+    //String[] nombre= {"ads","fds"}-->lenght 2
+    //int[] nombre= new int[2]--> lenght 2,0,0
+    /*
+    var arrayEmpty = emptyArray<String>();
+    var arrayNull = arrayOfNulls<String>(5);
+    var arrayCosas = arrayOf(1,2,3,4,5,6,true);
+    var arrayNumeros = intArrayOf(1,2,3,4,5,6,7);*/
+
+    var arrayNumeros: Array<Any>? = null;
+    var arrayCosas: Array<Int?> = arrayOfNulls<Int>(5);
 }

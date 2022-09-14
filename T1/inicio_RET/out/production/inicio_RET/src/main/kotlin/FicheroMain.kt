@@ -17,7 +17,7 @@ fun main(arg: Array<String>) {
     println("Hola mi nombre es ${nombre} y tengo ${edad} años");
     println("La suma del numero 4 y el 2 es ${4 + 2}");
     */
-    estructuraFor();
+
 }
 
 fun estructuraIf(x:Int):Unit{
@@ -65,10 +65,13 @@ fun estructuraWhen() {
 }
 
 fun estructuraFor() {
-    for (i in 1..6 step 2){
+    for (i in 1..4 step 2){
         println(i);
     }
     for (i in 10 downTo 5){
-
+        println(i);
     }
+
+    //(int)(Math.random()*21)
+    //(1..200).random();
 }
