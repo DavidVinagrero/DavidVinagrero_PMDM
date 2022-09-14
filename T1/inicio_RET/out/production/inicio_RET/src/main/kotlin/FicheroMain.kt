@@ -65,7 +65,7 @@ fun estructuraWhen() {
 }
 
 fun estructuraFor() {
-    for (i in 1..4 step 2){
+    for (i in 1..6 step 2){
         println(i);
     }
     for (i in 10 downTo 5){
