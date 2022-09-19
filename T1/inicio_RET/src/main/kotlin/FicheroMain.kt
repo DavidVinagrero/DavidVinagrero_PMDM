@@ -144,7 +144,6 @@ fun funcionArrays() {
     })
     var listaFiltrada= arrayPalabras.filter({value-> value?.length?:-1>=5});
     listaFiltrada.forEach({ println(it)})
-    arratPalabras.
     */
 
 }
