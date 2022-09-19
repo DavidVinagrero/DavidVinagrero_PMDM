@@ -1,5 +1,3 @@
-
-
 fun main(arg: Array<String>) {
 
     /*
@@ -18,7 +16,7 @@ fun main(arg: Array<String>) {
     println("La suma del numero 4 y el 2 es ${4 + 2}");
     */
 
-    funcionArrays()
+    funcionArrays();
 
 }
 
@@ -89,4 +87,64 @@ fun funcionArrays() {
 
     var arrayNumeros: Array<Any>? = null;
     var arrayCosas: Array<Int?> = arrayOfNulls<Int>(5);
+    arrayCosas[0];
+    arrayCosas.get(0);
+    arrayCosas[1]= 1;
+    arrayCosas[2]= 2;
+    arrayCosas[3]= 3;
+    arrayCosas[4]= 4;
+    //arrayCosas.set(1,null);
+    /*
+    for (i in arrayCosas){
+        // if (i!!>= 4)
+        if(i?: -1 >= 4)
+            println(i);
+    }
+    */
+    var contador: Int = 0;
+
+    /*
+    arrayCosas.forEach({ element->
+        println("Linea de ejecucion "+contador++);
+        println("Impresion de elemento $element\n")
+    });
+    */
+    /*
+    arrayCosas.forEachIndexed({index, element ->
+        println("Impresión $index")
+        println("Elemento con valor: $element")});
+        */
+
+    /*
+    var arrayPalabras = arrayOfNulls<String>(10);
+    for (i in 0..9){
+        println("Introduce la palabra a guardar");
+        var palabra= readLine();
+        arrayPalabras[i]=palabra;
+    }
+    arrayPalabras.forEachIndexed({ index,value->
+        println("Posición: $index")
+        println("Elemento: $value\n")
+    })
+    */
+
+    //Sacar palabras con más de 5 letras
+    var arrayPalabras = arrayOfNulls<String>(10);
+    for (i in 0..9){
+        println("Introduce la palabra a guardar");
+        var palabra= readLine();
+        arrayPalabras[i]=palabra;
+    }
+    /*
+    arrayPalabras.forEachIndexed({index, s ->
+        if(s?.length?:-1>=5){
+            println("Posición: $index")
+            println("Elemento: $s\n")
+        }
+    })
+    var listaFiltrada= arrayPalabras.filter({value-> value?.length?:-1>=5});
+    listaFiltrada.forEach({ println(it)})
+    arratPalabras.
+    */
+
 }
