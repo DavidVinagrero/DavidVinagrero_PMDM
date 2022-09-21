@@ -16,7 +16,6 @@ fun main(arg: Array<String>) {
     println("La suma del numero 4 y el 2 es ${4 + 2}");
     */
 
-    funcionArrays();
 
 }
 
@@ -146,4 +145,18 @@ fun funcionArrays() {
     listaFiltrada.forEach({ println(it)})
     */
 
+}
+
+fun funcionArraysList(){
+    var arrayMutableKt= ArrayList<String>();
+    //Recorrer
+    arrayMutableKt.forEach({elemento-> println(elemento)});
+    //Añadir
+    arrayMutableKt.add("Hola");
+    arrayMutableKt.add("qué");
+    arrayMutableKt.add("tal");
+    arrayMutableKt.add("estás");
+    arrayMutableKt.removeAt(0);
+    arrayMutableKt.get(0);
+    arrayMutableKt.removeIf({elemento-> elemento.length>=5});
 }
