@@ -4,14 +4,11 @@ fun main(){
     //funcionParamDefecto(5,"Hola",true);
     //funcionParamDefecto(5,"Hola");
     //funcionParamDefecto(numero=5,acierto=true);
-    /*
     if(funcionRetorno(4,5)){
         println("La suma es mayor que diez");
     }else{
         println("La suma menor que diez");
     }
-    */
-    funcionLambda(4,2);
 
 }
 
@@ -33,11 +30,8 @@ fun funcionParamDefecto(numero: Int, palabra: String, acierto: Boolean=false){
 fun funcionSuma(numeroUno: Int, numeroDos: Int)= println("${numeroUno+numeroDos}");
 
 fun funcionRetorno(x: Int, y: Int): Boolean {
-    if(x+y>10) {
+    if(x+y>10)
         return true;
-    }else{
+    else
         return false;
-    }
 }
-
-var funcionLambda: (Int,Int?)->Unit ={numeroUno: Int,numeroDos: Int?-> println("${numeroUno+numeroDos!!}")}
