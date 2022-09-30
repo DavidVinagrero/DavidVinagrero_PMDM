@@ -1,3 +1,4 @@
+import model.Asalariado
 import model.Coche
 import model.Propietario
 
@@ -9,7 +10,10 @@ fun main(){
     coche2.calcularParMotor({aceleracion->aceleracion*1},10)
     coche1.asignarPropietario(Propietario("A","B","123"))
 
-    println(coche1.propietario)
+    coche1.calcularVelocidad= {cc->
+        println("Ejecución desde la clase coche")
+        println("Deficición en la clase main")
+        println("Obtenidos los cc del coche: $cc")}
     /*
     coche1.cv=100
     println(coche1.cv)

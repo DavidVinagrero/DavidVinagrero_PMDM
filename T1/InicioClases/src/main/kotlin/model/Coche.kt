@@ -4,47 +4,55 @@ package model
 // open
 class Coche(var marca: String, var modelo: String) {
     //Atributos
-    var bastidor: String?= null
-    var cc: Int= 0
-    var cv: Int= 0
-    get()= field
-    set(cc) {
-        field=cv
-    }
+    var bastidor: String? = null
+    var cc: Int = 0
+    var cv: Int = 0
+        get() = field
+        set(cc) {
+            field = cv
+        }
 
     lateinit var propietario: Propietario
 
     //Constructores
-    constructor(marca: String, modelo: String, bastidor: String):this(marca,modelo){
-        this.bastidor= bastidor
+    constructor(marca: String, modelo: String, bastidor: String) : this(marca, modelo) {
+        this.bastidor = bastidor
     }
 
     //Bloque ejecutado tras cualquier constructor
     init {
-        propietario= Propietario("Alfonso","García","12345678A")
+        propietario = Propietario("Alfonso", "García", "12345678A")
     }
 
     //Funciones
-    var mostrarDatos:()->Unit= {
+    var mostrarDatos: () -> Unit = {
         println("Marca: $marca")
         println("Modelo: $modelo")
         println("CV: $cv")
         println("CC: $cc")
     }
 
-    fun calcularParMotor(calculoPar:(Int)->Int, aceleracion: Int){
+    fun calcularParMotor(calculoPar: (Int) -> Int, aceleracion: Int) {
         calculoPar(aceleracion);
     }
 
-    fun asignarPropietario(propietario: Propietario){
-        this.propietario= propietario
+    fun asignarPropietario(propietario: Propietario) {
+        this.propietario = propietario
     }
 
-    //Getter & Setter
-    fun setCV(cv:Int){
-        this.cv= cv;
+    fun aumentarVelocidad(velocidad: Int) {
+        calcularVelocidad?.invoke(this.cc)
     }
-    fun getCV():Int{
+
+    var calcularVelocidad: ((Int) -> Unit)? = null;
+
+    //Getter & Setter
+
+    fun setCV(cv: Int) {
+        this.cv = cv;
+    }
+
+    fun getCV(): Int {
         return this.cv;
     }
 
