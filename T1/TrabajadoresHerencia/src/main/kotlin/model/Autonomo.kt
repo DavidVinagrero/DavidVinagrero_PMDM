@@ -1,7 +1,7 @@
 package model
 
-class Autonomo(nombre: String, apellido: String, dni: String, var sueldo: Int, var contratado: Boolean)
-    : Persona(nombre, apellido, dni) {
+class Autonomo(nombre: String, apellido: String, dni: String, NSS:Int, var sueldo: Int, var contratado: Boolean)
+    : Trabajador(nombre, apellido, dni, NSS) {
 
     //Métodos override
     override fun mostrarDatos() {
