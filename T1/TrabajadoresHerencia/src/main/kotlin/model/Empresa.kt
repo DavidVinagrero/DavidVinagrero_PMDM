@@ -72,15 +72,16 @@ class Empresa(var nombre: String) {
     }
 
     fun listarTrabajadores() {
+        var arrayMutableKt=ArrayList<Trabajador>();
         var opcion: Int
-        println(" 1. Mostrar asalariados\n 2. Mostrar autónomos\n 3. Mostrar jefes")
+        println(" 1. Mostrar asalariados\n 2. Mostrar autónomos\n 3. Mostrar jefes\n 4. Mostrar todos")
         opcion = readLine()!!.toInt()
         if (opcion == 1) {
+            arrayMutableKt.forEach({elemento-> println(elemento)})
+        } else {
             for (i in trabajador) {
                 i.mostrarDatos()
             }
-        } else {
-
         }
     }
 }
