@@ -1,13 +1,15 @@
 package model
 
-class Jefe(nombre: String, apellido: String, dni: String, NSS: Int, var acciones: Double, var beneficio: Double) :
-    Trabajador(nombre, apellido, dni, NSS) {
+data class Jefe(var name: String, var apellidos:String, var dnii: String, var acciones: Int, var beneficio:Double):Trabajador(name,apellidos,dnii){
 
-    // Métodos override
-    override fun mostrarDatos() {
-        println("Jefe")
-        super.mostrarDatos()
-        println("Acciones: $acciones")
-        println("Beneficio: $beneficio")
+    val trabajadores = arrayListOf<Trabajador>()
+    fun despedirTrabajador(trabajador: Trabajador){
+        trabajadores.remove(trabajador)
     }
+    fun contratarTrabajador(trabajador: Trabajador){
+        trabajadores.add(trabajador)
+    }
+
+
+
 }

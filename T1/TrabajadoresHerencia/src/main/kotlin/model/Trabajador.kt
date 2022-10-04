@@ -1,13 +1,11 @@
 package model
 
-open class Trabajador(nombre: String, apellido: String, dni: String, var NSS: Int)
-    : Persona(nombre, apellido, dni) {
+open abstract class Trabajador(var nombre: String, var apellido: String, var dni: String) {
 
-    //Funciones
-    override fun mostrarDatos(){
-        println("Nombre: $nombre")
-        println("Apellido: $apellido")
-        println("DNI: $dni")
-        println("NSS: $NSS")
+    fun mostrarTrabajador(){
+        println("Nombre: "+nombre)
+        println("Apellido: "+apellido)
+        println("DNI: "+dni)
     }
+
 }
