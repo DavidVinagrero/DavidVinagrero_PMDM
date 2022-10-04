@@ -16,6 +16,8 @@ class Centralita {
     fun registrarLlamada(llamada: Llamada) {
         if (llamada is LlamadaNacional && (listaLlamadas.filter { it.javaClass.simpleName == "LlamadasNacional" }).size < 4){
             listaLlamadas.add(llamada)
+        } else {
+            println("Llamadas nacionales llenas")
         }
         println("Llamada registrada con datos:")
         llamada.mostrarDatos()
