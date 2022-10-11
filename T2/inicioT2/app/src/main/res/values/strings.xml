@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">inicioT2</string>
+    <string name="saludo">Primera app Android</string>
+    <string name="botonPulsar">Pulsar</string>
+</resources>
