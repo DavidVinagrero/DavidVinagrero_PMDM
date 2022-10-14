@@ -35,4 +35,16 @@
         android:textSize="@dimen/texto_pequenio"
         android:id="@+id/boton_inicial"
     />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTop"
+        android:hint="@string/hint_nombre"
+        android:inputType="text"
+        android:drawableLeft="@android:drawable/ic_menu_agenda"
+        android:drawablePadding="20dp"
+        android:id="@+id/edit_nombre"
+    />
+
 </LinearLayout>
