@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IMCActivitiy"
+    android:orientation="vertical">
+
+    <!-- Caja de arriba 50% pantalla en vertical -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".50"
+        android:padding="20dp">
+        <!-- Segunda caja de arriba 70% -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".70">
+            <!-- Caja de la izquierda -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".50">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PESO"
+                    android:textSize="30sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ALTURA"
+                    android:layout_marginTop="20dp"
+                    android:textSize="30sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SEXO"
+                    android:layout_marginTop="20dp"
+                    android:textSize="30sp"/>
+            </LinearLayout>
+            <!-- Caja de la derecha -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".50">
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/etiqueta_peso"
+                    android:inputType="numberDecimal"
+                    android:hint="Kg"
+                    android:layout_marginTop="-10dp"/>
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/etiqueta_altura"
+                    android:inputType="numberDecimal"
+                    android:hint="m"
+                    android:layout_marginTop="15dp"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/etiqueta_sexo"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="15dp"
+                    android:hint="Hombre/mujer"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Segunda caha de abajo 30% -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".30">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calcular"
+                android:layout_gravity="center"
+                android:id="@+id/boton_calcular"
+                android:layout_marginTop="25dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Caja de abajo -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".50"
+        android:padding="20dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imagen_final"
+            />
+    </LinearLayout>
+
+</LinearLayout>
+
+<!--
+<LinearLayout
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_weight=".50">
+
+</LinearLayout>
+<LinearLayout
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_weight=".50">
+
+</LinearLayout> -->
+<!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PESO"
+                android:textSize="30sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALTURA"
+                android:layout_marginTop="20dp"
+                android:textSize="30sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SEXO"
+                android:layout_marginTop="20dp"
+                android:textSize="30sp"/>-->

@@ -3,10 +3,7 @@ package com.example.iniciot2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var botonInicial: Button
     lateinit var etiquetaSaludo: TextView
     lateinit var editNombre: EditText
+    lateinit var imagenEstado: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +28,9 @@ class MainActivity : AppCompatActivity() {
             if(!editNombre.text.isEmpty()){
                 var notification= Snackbar.make(it,"¿Estás seguro, "+editNombre.text+"?",Snackbar.LENGTH_INDEFINITE)
                 notification.setAction("Aceptar",{
-                    etiquetaSaludo.setText(editNombre.text)
-                    editNombre.setText("")
+                    //etiquetaSaludo.setText(editNombre.text)
+                    //editNombre.setText("")
+                    imagenEstado.setImageResource(R.drawable.shocked)
                 })
                 notification.show()
             } else{
@@ -45,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         this.botonInicial= findViewById(R.id.boton_inicial)
         this.etiquetaSaludo= findViewById(R.id.texto_saludo)
         this.editNombre= findViewById(R.id.edit_nombre)
+        this.imagenEstado= findViewById(R.id.imagen_estado)
     }
 
     override fun onStart() {

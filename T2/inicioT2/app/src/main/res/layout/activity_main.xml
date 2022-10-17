@@ -47,4 +47,12 @@
         android:id="@+id/edit_nombre"
     />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/marginTop"
+        android:src="@drawable/meh"
+        android:scaleType="center"
+        android:id="@+id/imagen_estado"
+    />
 </LinearLayout>
