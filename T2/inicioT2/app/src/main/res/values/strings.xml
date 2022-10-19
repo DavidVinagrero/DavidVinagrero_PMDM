@@ -3,4 +3,6 @@
     <string name="saludo">Primera app Android</string>
     <string name="botonPulsar">Pulsar</string>
     <string name="hint_nombre">Introduce tu nombre</string>
+    <string name="texto_pasar">Pasar</string>
+    <string name="saludo_completo">, has arrancado la segunda pantalla</string>
 </resources>

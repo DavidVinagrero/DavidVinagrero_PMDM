@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="paddinGeneral">20dp</dimen>
-    <dimen name="marginTop">40dp</dimen>
+    <dimen name="marginTop">10dp</dimen>
     <dimen name="texto_pequenio">10sp</dimen>
     <dimen name="texto_medio">20sp</dimen>
     <dimen name="texto_grande">30sp</dimen>

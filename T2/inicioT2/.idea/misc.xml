@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T2/inicioT2/app/src/main/res/layout/activity_details.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T2/inicioT2/app/src/main/res/layout/activity_imc.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T2/inicioT2/app/src/main/res/layout/activity_main.xml" value="0.2222222222222222" />
+        <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T2/inicioT2/app/src/main/res/layout/activity_second.xml" value="0.22083333333333333" />
       </map>
     </option>
   </component>
