@@ -34,6 +34,7 @@ class IMCActivitiy : AppCompatActivity() {
                         // IMC = peso (kg) / altura2 (m)
                     var imc= etiquetaPeso.text.toString().toDouble()/ Math.pow(etiquetaAltura.text.toString().toDouble(),2.0)
                     Log.v("imc_resultado", imc.toString())
+
                     var accionPasar= Intent(applicationContext, DetailsActivity::class.java)
                     var datosPasar: Bundle= Bundle()
                     datosPasar.putDouble("imc", imc.toDouble())
