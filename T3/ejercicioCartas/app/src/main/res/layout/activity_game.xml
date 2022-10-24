@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/cf"
+        android:id="@+id/fondo"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/fondo_boton_menor"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_gravity="bottom|center"
+        android:id="@+id/boton_menor"
+        android:layout_marginBottom="100dp"/>
+
+    <ImageButton
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/fondo_boton_mayor"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_gravity="top|center"
+        android:id="@+id/boton_mayor"
+        android:layout_marginTop="100dp"/>
+
+</FrameLayout>
