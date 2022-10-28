@@ -1,0 +1,12 @@
+ <resources>
+        <string name="app_name">buttonsU3</string>
+        <string name="boton_pulsar">Click</string>
+        <string name="texto_normal">Button normal text</string>
+        <string name="texto_boton_imagen">Text image button</string>
+        <string name="texto_boton_toggle">Text toggle button</string>
+        <string name="texto_grupos_radios">Text radio gruop</string>
+        <string name="texto_check">Check text</string>
+        <string name="opcion_uno">Option one</string>
+        <string name="opcion_dos">Option two</string>
+        <string name="opcion_tres">Option three</string>
+    </resources>

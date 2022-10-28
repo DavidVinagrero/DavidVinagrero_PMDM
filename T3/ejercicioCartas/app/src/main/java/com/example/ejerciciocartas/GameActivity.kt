@@ -156,6 +156,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun instancias() {
         botonMayor = findViewById(R.id.boton_mayor)
+
         botonMenor = findViewById(R.id.boton_menor)
         fondoAplicacion = findViewById(R.id.fondo)
     }
