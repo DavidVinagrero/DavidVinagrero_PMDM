@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ExamenDavidVinagreroE</string>
+    <string name="boton_comenzar">Comenzar examen</string>
+    <string name="boton_calcular">Calcular</string>
+    <string name="opcion_uno">PMDM</string>
+    <string name="opcion_dos">DI</string>
+    <string name="opcion_tres">AD</string>
+    <string name="opcion_cuatro">SGE</string>
+    <string name="opcion_cinco">PSP</string>
+    <string name="opcion_uno_profesores">D. Manuel</string>
+    <string name="opcion_dos_profesores">D. Carlos</string>
+    <string name="opcion_tres_profesores">D. Agustín</string>
+    <string name="opcion_cuatro_profesores">D. Alverto</string>
+</resources>

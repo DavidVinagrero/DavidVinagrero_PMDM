@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tamanio_header">0.2</dimen>
+    <dimen name="tamanio_body">0.8</dimen>
+    <dimen name="primer_margen">100dp</dimen>
+    <dimen name="ancho_texto">300dp</dimen>
+    <dimen name="margen_switch">25dp</dimen>
+    <dimen name="margen_superior">20dp</dimen>
+</resources>

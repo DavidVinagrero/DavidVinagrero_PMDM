@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/header"
+            android:scaleType="fitCenter"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="40dp"
+        android:layout_weight="0.8">
+
+        <EditText
+            android:layout_width="@dimen/ancho_texto"
+            android:layout_height="wrap_content"
+            android:hint="Introduce tu nombre"
+            android:id="@+id/etiqueta_nombre"
+            android:layout_marginTop="@dimen/primer_margen"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:layout_width="@dimen/ancho_texto"
+            android:layout_height="wrap_content"
+            android:id="@+id/etiqueta_apellido"
+            android:hint="Introduce tu apellido"
+            android:layout_gravity="center"/>
+
+       <Switch
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Activar examen"
+           android:id="@+id/switch_comenzar"
+           android:layout_marginRight="@dimen/margen_switch"
+           android:layout_gravity="center|right"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/boton_comenzar"
+            android:id="@+id/boton_comenzar"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>
