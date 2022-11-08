@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="operacion">30dp</dimen>
-    <dimen name="resultado">60dp</dimen>
-    <dimen name="numeros">40dp</dimen>
+    <dimen name="botones">35dp</dimen>
+    <dimen name="botones_cientifica">25dp</dimen>
 </resources>
