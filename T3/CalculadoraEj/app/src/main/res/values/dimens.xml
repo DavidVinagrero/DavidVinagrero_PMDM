@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="botones">35dp</dimen>
-    <dimen name="botones_cientifica">25dp</dimen>
+    <dimen name="botones_vertical">35dp</dimen>
+    <dimen name="botones_horizontal">20dp</dimen>
+    <dimen name="botones_cientifica">20dp</dimen>
+    <dimen name="botones_horizontal_cientifica">20dp</dimen>
 </resources>
