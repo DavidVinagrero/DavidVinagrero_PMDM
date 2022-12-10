@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AplicacionHobbies</string>
+    <string-array name="tipo_hobbies">
+        <item>Fútbol</item>
+        <item>Juegos</item>
+        <item>Series</item>
+    </string-array>
+</resources>
