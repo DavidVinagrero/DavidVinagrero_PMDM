@@ -11,13 +11,15 @@ import com.example.aplicacionhobbies.adapter.AdaptadorHobbie
 import com.example.aplicacionhobbies.databinding.ActivityMainBinding
 import com.example.aplicacionhobbies.model.Elemento
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(),
-    AdapterView.OnItemSelectedListener {
+    AdapterView.OnItemSelectedListener, AdaptadorHobbie.OnRecyclerElementoListener
+{
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var listaHobbies: ArrayList<Elemento>
-    private lateinit var adaptadorRecycler: AdaptadorHobbie
+    private lateinit var adaptadorHobbie: AdaptadorHobbie
     private lateinit var listaSeries: ArrayList<Elemento>
     private lateinit var listaJuegos: ArrayList<Elemento>
     private lateinit var listaFutbol: ArrayList<Elemento>
@@ -66,18 +68,17 @@ class MainActivity : AppCompatActivity(),
 
 
 
-        adaptadorRecycler = AdaptadorHobbie(this, listaHobbies)
+        adaptadorHobbie = AdaptadorHobbie(this, listaHobbies)
     }
 
     private fun mostrarDatos() {
         binding.listaObjetos.layoutManager =
             LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
-        binding.listaObjetos.adapter = adaptadorRecycler
+        binding.listaObjetos.adapter = adaptadorHobbie
     }
 
     private fun acciones() {
         binding.spinnerTipoHobbie.onItemSelectedListener = this
-        adaptadorRecycler.onBindViewHolder(adaptadorRecycler)
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -114,5 +115,17 @@ class MainActivity : AppCompatActivity(),
     override fun onNothingSelected(p0: AdapterView<*>?) {
 
     }
+
+    override fun comunicaElementoSelected(elemento: Elemento) {
+        binding.imagenResultado.setImageResource(elemento.imagen)
+        binding.nombreObjeto.setText(elemento.nombre)
+        binding.detalleObjeto.setText(elemento.detalle)
+    }
+
+/*    fun comunicaElementoSelected(elemento: Elemento) {
+        // Utilizar los datos
+        Snackbar.make(binding.listaObjetos,
+            "Elemento ${elemento.nombre}", Snackbar.LENGTH_SHORT).show()
+    }*/
 }
 

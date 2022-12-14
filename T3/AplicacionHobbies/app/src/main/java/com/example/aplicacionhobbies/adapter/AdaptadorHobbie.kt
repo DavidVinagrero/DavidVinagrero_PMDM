@@ -14,6 +14,13 @@ import com.example.aplicacionhobbies.model.Elemento
 class AdaptadorHobbie(var context: Context, var lista: ArrayList<Elemento>) :
     RecyclerView.Adapter<AdaptadorHobbie.MyHolder>() {
 
+    // 2
+    private lateinit var listener: OnRecyclerElementoListener
+
+    init {
+         listener = context as OnRecyclerElementoListener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         var view: View = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
         var holder = MyHolder(view)
@@ -25,10 +32,25 @@ class AdaptadorHobbie(var context: Context, var lista: ArrayList<Elemento>) :
         holder.nombre.setText(hobbieFila.nombre)
         holder.detalle.setText(hobbieFila.detalle)
         holder.imagen.setImageResource(hobbieFila.imagen)
+        // 3
+        holder.imagen.setOnClickListener{
+            listener.comunicaElementoSelected(hobbieFila)
+        }
+        holder.nombre.setOnClickListener{
+            listener.comunicaElementoSelected(hobbieFila)
+        }
+        holder.detalle.setOnClickListener{
+            listener.comunicaElementoSelected(hobbieFila)
+        }
     }
 
     override fun getItemCount(): Int {
         return lista.size
+    }
+
+    // 1
+    interface OnRecyclerElementoListener{
+        fun comunicaElementoSelected(elemento: Elemento)
     }
 
     inner class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

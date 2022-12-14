@@ -1,8 +1,3 @@
-package com.example.t3_listas_ret.model
+package com.develop.t4_listasrecycler.model
 
-class Usuario(var nombre: String, var telefono: Int, var genero:String) {
-
-    override fun toString(): String {
-        return nombre
-    }
-}
+data class Usuario (var nombre: String, var apellido: String, var telefono: Int, var imagen: Int)
