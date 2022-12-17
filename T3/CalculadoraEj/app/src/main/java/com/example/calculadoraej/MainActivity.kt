@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import com.example.calculadoraej.databinding.ActivityMainBinding
-import kotlin.math.roundToInt
-import kotlin.math.sqrt
+import kotlin.math.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     var operandoDos: Double = 0.0
     var resultado: Double = 0.0
     var porcentaje: Double = 0.0
+    var potencia: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +32,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(view)
         acciones()
 
-        if (resources.configuration.orientation == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
+            if (resources.configuration.orientation == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
 
-        } else if (resources.configuration.orientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+            } else if (resources.configuration.orientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
 
-        }
+            }
     }
 
     private fun acciones() {
@@ -52,8 +53,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.botonLimpiar.setOnClickListener(this)
         binding.botonIgual.setOnClickListener(this)
         binding.botonPorcentaje.setOnClickListener(this)
+
         binding.botonPi?.setOnClickListener(this)
         binding.botonRaizCuadrada?.setOnClickListener(this)
+        binding.botonE?.setOnClickListener(this)
+        binding.botonInvertir?.setOnClickListener(this)
+        binding.botonElevar?.setOnClickListener(this)
+        binding.botonLogaritmo?.setOnClickListener(this)
+        binding.botonIn?.setOnClickListener(this)
+        binding.botonSin?.setOnClickListener(this)
+        binding.botonCos?.setOnClickListener(this)
+        binding.botonTan?.setOnClickListener(this)
 
         // Botones con números
         binding.botonCero.setOnClickListener(this)
@@ -92,11 +102,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.boton_restar -> {
-                tipoOperacion = 2
-                operandoUno =
-                    binding.etiquetaOperacion.text.toString().replace("-", "").toDouble()
-                // Vacía el texto de resultado
-                binding.etiquetaResultado.text = ""
+                    tipoOperacion = 2
+                    operandoUno =
+                        binding.etiquetaOperacion.text.toString().replace("-", "").toDouble()
+                    // Vacía el texto de resultado
+                    binding.etiquetaResultado.text = ""
             }
 
             R.id.boton_multiplicar -> {
@@ -121,6 +131,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 tipoOperacion = 7
                 operandoUno =
                     binding.etiquetaOperacion.text.toString().replace("^", "").toDouble()
+                binding.etiquetaResultado.text = ""
             }
 
             R.id.boton_porcentaje -> {
@@ -222,6 +233,52 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.etiquetaResultado.append("3.14159")
                 binding.etiquetaOperacion.text = 3.14159.toString()
             }
+
+            R.id.boton_e -> {
+                binding.etiquetaResultado.append("2.71828")
+                binding.etiquetaOperacion.text = 2.71828.toString()
+            }
+
+            R.id.boton_invertir -> {
+               var cambiarSigno1: Double = 0.0
+               cambiarSigno1 = binding.etiquetaOperacion.text.toString().replace("+/-", "").toDouble()
+               if (cambiarSigno1 > 0){
+                   binding.etiquetaOperacion.text = (cambiarSigno1 * -1).toString()
+                   binding.etiquetaResultado.text = (cambiarSigno1 * -1).toString()
+               }
+            }
+
+            R.id.boton_logaritmo -> {
+                operandoUno = binding.etiquetaOperacion.text.toString().replace("log", "").toDouble()
+                binding.etiquetaOperacion.text = "Log("+operandoUno+")"
+                binding.etiquetaResultado.text = log10(operandoUno).toString()
+            }
+
+            R.id.boton_in -> {
+                operandoUno = binding.etiquetaOperacion.text.toString().replace("in","").toDouble()
+                binding.etiquetaOperacion.text = "In("+operandoUno+")"
+                binding.etiquetaResultado.text = (ln(operandoUno)).toString()
+            }
+
+            R.id.boton_sin -> {
+                operandoUno = binding.etiquetaOperacion.text.toString().replace("sin","").toDouble()
+                binding.etiquetaOperacion.text = "sin("+operandoUno+")"
+                binding.etiquetaResultado.text = (sin(operandoUno)).toString()
+            }
+
+            R.id.boton_cos -> {
+                operandoUno = binding.etiquetaOperacion.text.toString().replace("cos","").toDouble()
+                binding.etiquetaOperacion.text = "cos("+operandoUno+")"
+                binding.etiquetaResultado.text = (cos(operandoUno)).toString()
+            }
+
+            R.id.boton_tan -> {
+                operandoUno = binding.etiquetaOperacion.text.toString().replace("tan","").toDouble()
+                binding.etiquetaOperacion.text = "tan("+operandoUno+")"
+                binding.etiquetaResultado.text = (tan(operandoUno)).toString()
+            }
+
+
         }
 
     }
@@ -249,8 +306,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
-        outState.putString("resultado", binding.etiquetaOperacion.text.toString())
+        outState.putString("resultado", binding.etiquetaResultado.text.toString())
         outState.putString("operacion", binding.etiquetaOperacion.text.toString())
+
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {

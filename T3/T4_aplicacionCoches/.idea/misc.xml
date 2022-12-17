@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T3/T4_aplicacionCoches/app/src/main/res/drawable/fondo_layout.xml" value="0.2275" />
         <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T3/T4_aplicacionCoches/app/src/main/res/layout/activity_main.xml" value="0.19157608695652173" />
+        <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T3/T4_aplicacionCoches/app/src/main/res/layout/item_lista.xml" value="0.19157608695652173" />
+        <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T3/T4_aplicacionCoches/app/src/main/res/layout/item_recycler.xml" value="0.19157608695652173" />
+        <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T3/T4_aplicacionCoches/app/src/main/res/layout/item_recycler_clase.xml" value="0.19157608695652173" />
         <entry key="..\:/Users/david/Documents/DAM2/Repositorios/DavidVinagrero_PMDM/T3/T4_aplicacionCoches/app/src/main/res/layout/recycler_item.xml" value="0.2222222222222222" />
       </map>
     </option>
