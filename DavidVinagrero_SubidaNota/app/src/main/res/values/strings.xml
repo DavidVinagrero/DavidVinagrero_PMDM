@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DavidVinagrero_SubidaNota</string>
+    <string-array name="divisas">
+        <item>euro</item>
+        <item>dolar</item>
+        <item>libra</item>
+    </string-array>
+</resources>

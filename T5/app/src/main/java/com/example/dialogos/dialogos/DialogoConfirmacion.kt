@@ -13,10 +13,12 @@ import com.example.dialogos.R
 class DialogoConfirmacion: DialogFragment() {
 
     private lateinit var contexto: Context
+    private lateinit var listener: OnDialogoConfirmListener
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         this.contexto = context
+        this.listener = context as OnDialogoConfirmListener
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -29,15 +31,21 @@ class DialogoConfirmacion: DialogFragment() {
         // botones --> Positivo negativo neutral
         builder.setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
             Log.v("opcion_dialogo","pulsado OK")
+            listener.onDialogoSelected("Sleccionado OK")
         })
         builder.setNegativeButton("CANCELAR", DialogInterface.OnClickListener { _, _ ->
             Log.v("opcion_dialogo","pulsado CANCELAR")
+            listener.onDialogoSelected("Sleccionado CANCELAR")
         })
         builder.setNeutralButton("SALIR", DialogInterface.OnClickListener { _, _ ->
             Log.v("opcion_dialogo","pulsado NEUTRAL")
+            listener.onDialogoSelected("Sleccionado NEUTRAL")
         })
 
         return builder.create()
     }
 
+    interface OnDialogoConfirmListener{
+        fun onDialogoSelected(comunicacion: String)
+    }
 }

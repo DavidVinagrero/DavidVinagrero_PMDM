@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.View
 import com.example.dialogos.databinding.ActivityMainBinding
 import com.example.dialogos.dialogos.DialogoConfirmacion
+import com.example.dialogos.dialogos.DialogoSeleccion
+import com.example.dialogos.dialogos.DialogoSimple
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, DialogoConfirmacion.OnDialogoConfirmListener, DialogoSeleccion.OnDialogoSeleccionListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -28,6 +30,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 // objeto del diálogo --> la clase
                 DialogoConfirmacion().show(supportFragmentManager, null)
             }
+
+            binding.botonMultiple.id -> {
+                DialogoSeleccion().show(supportFragmentManager, null)
+            }
+
+            binding.botonSimple.id -> {
+                DialogoSimple().show(supportFragmentManager, null)
+            }
         }
+    }
+
+    override fun onDialogoSelected(comunicacion: String) {
+        binding.etiquetaConfirmacion.text = comunicacion
+    }
+
+    override fun onDialogoSeleccionSelected(comunicado: String) {
+        binding.etiquetaMultiple.text = comunicado
     }
 }
