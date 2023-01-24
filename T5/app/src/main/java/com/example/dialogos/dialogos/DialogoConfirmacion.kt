@@ -10,7 +10,7 @@ import android.util.Log
 import androidx.fragment.app.DialogFragment
 import com.example.dialogos.R
 
-class DialogoConfirmacion: DialogFragment() {
+class DialogoConfirmacion : DialogFragment() {
 
     private lateinit var contexto: Context
     private lateinit var listener: OnDialogoConfirmListener
@@ -23,25 +23,27 @@ class DialogoConfirmacion: DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
-        // AlertDialog.Builder
+        // AlertDialgo.Builder
+        //val builder = AlertDialog.Builder(requireContext())
         val builder = AlertDialog.Builder(contexto)
-        builder.setTitle(getString(R.string.titulo_dialogo_confirmacion))
-        builder.setMessage("¿Estas seguro de que quieres continuar?")
+        builder.setTitle("Continuar")
+        //builder.setTitle(getString(R.string.titulo_dialogo_confirm))
+        builder.setMessage("¿Estas seguro que quieres continuar?")
 
-        // botones --> Positivo negativo neutral
-        builder.setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
-            Log.v("opcion_dialogo","pulsado OK")
-            listener.onDialogoSelected("Sleccionado OK")
-        })
-        builder.setNegativeButton("CANCELAR", DialogInterface.OnClickListener { _, _ ->
-            Log.v("opcion_dialogo","pulsado CANCELAR")
-            listener.onDialogoSelected("Sleccionado CANCELAR")
-        })
-        builder.setNeutralButton("SALIR", DialogInterface.OnClickListener { _, _ ->
-            Log.v("opcion_dialogo","pulsado NEUTRAL")
-            listener.onDialogoSelected("Sleccionado NEUTRAL")
+        // botones -- Positivo negativo neutral
+        builder.setPositiveButton("OK", DialogInterface.OnClickListener { _,_ ->
+            Log.v("dialogo","PULSADO OK")
+            listener.onDialogoSelected("Seleccionado OK")
         })
 
+        builder.setNegativeButton("CANCEL", DialogInterface.OnClickListener { _,_ ->
+            Log.v("dialogo","PULSADO CANCELAR")
+            listener.onDialogoSelected("Seleccionado CANCEL")
+        })
+
+        builder.setNeutralButton("SALIR", DialogInterface.OnClickListener { _,_ ->
+            Log.v("dialogo","PULSADO SALIR")
+        })
         return builder.create()
     }
 
