@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="AÑADIR"
+        android:id="@+id/opcion_aniadir"/>
+    <item android:title="VACIAR"
+        android:id="@+id/opcion_vaciar"/>
+</menu>
+<!--
+nombre
+profesor
+horas (spinner 3-8)
+ciclo (DAM-ASIR)
+curso (1-2) -->
