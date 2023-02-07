@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Examen_T6_DavidVinagreroEncina</string>
+    <string-array name="ciudades">
+        <item>Londres</item>
+        <item>Madrid</item>
+        <item>New York</item>
+        <item>San Francisco</item>
+        <item>Miami</item>
+        <item>Barcelona</item>
+    </string-array>
+</resources>

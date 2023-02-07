@@ -41,10 +41,12 @@ class DialogoPerso: DialogFragment() {
         botonLogin = vista.findViewById(R.id.boton_login)
         checkRecordad = vista.findViewById(R.id.check_recordad)
         spinnerDpt = vista.findViewById(R.id.spinner_departamento)
+
         spinnerDpt.adapter = ArrayAdapter
             .createFromResource(requireContext(),R.array.departamentos,android.R.layout.simple_spinner_item)
         (spinnerDpt.adapter as ArrayAdapter<CharSequence>)
             .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
 
     }
 
