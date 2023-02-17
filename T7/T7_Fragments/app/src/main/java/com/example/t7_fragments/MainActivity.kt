@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import com.example.t7_fragments.databinding.ActivityMainBinding
 import com.example.t7_fragments.fragment.FragmentBanner
+import com.example.t7_fragments.fragment.FragmentDetalle
+import com.example.t7_fragments.fragment.FragmentNombre
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -26,10 +28,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val fm = supportFragmentManager
                 val ft = fm.beginTransaction()
 
-                ft.replace(binding.sitioFragments.id,FragmentBanner())
+                ft.replace(binding.sitioFragments.id, FragmentNombre())
+                ft.addToBackStack(null)
                 ft.commit()
+
+                /*ft.replace(binding.sitioFragments.id,FragmentBanner())
+                ft.commit()*/
             }
             binding.botonDos.id->{
+                val fm = supportFragmentManager
+                val ft = fm.beginTransaction()
+
+                ft.replace(binding.sitioFragments.id, FragmentDetalle())
+                ft.addToBackStack(null)
+                ft.commit()
 
             }
             binding.botonTres.id->{

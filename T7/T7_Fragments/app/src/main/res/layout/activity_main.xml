@@ -24,16 +24,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
+            android:text="1"
             android:id="@+id/boton_uno"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
+            android:text="2"
             android:id="@+id/boton_dos"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
+            android:text="3"
             android:id="@+id/boton_tres"/>
     </LinearLayout>
     <FrameLayout
