@@ -9,13 +9,20 @@ import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TimePicker
+import com.example.ejerciciodialogos.dialogos.DialogoComunica
 import com.example.ejerciciodialogos.dialogos.DialogoFecha
 import com.example.ejerciciodialogos.dialogos.DialogoHora
+import com.example.ejerciciodialogos.dialogos.DialogoInicio
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener,
-    TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
+    TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener, DialogoInicio.OnInicioListener {
 
     private lateinit var botonCrear: Button
+
+    private var horaSeleccionada: String = ""
+    private var fechaSeleccionada: String = ""
+    private var nombreApellidos: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +42,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener,
 
     override fun onTimeSet(p0: TimePicker?, p1: Int, p2: Int) {
         Log.v("seleccionada_hora","Las "+p1+"h y $p2 minutos")
+        horaSeleccionada = "${p1}:${p2}"
         DialogoFecha().show(supportFragmentManager, null)
     }
 
@@ -49,5 +57,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener,
 
     override fun onDateSet(p0: DatePicker?, p1: Int, p2: Int, p3: Int) {
         Log.v("seleccionada_fecha","Día $p3, del mes "+(p2+1)+" del año $p1")
+        fechaSeleccionada = "${p3}/${p2+1}/${p1}"
+        DialogoInicio().show(supportFragmentManager, null)
+    }
+
+    override fun onInicioListenerSelected(nombre: String, apellido: String) {
+        nombreApellidos = "$nombre $apellido"
+        val dialogo = DialogoComunica.newInstance(nombreApellidos,horaSeleccionada,fechaSeleccionada)
+        dialogo.show(supportFragmentManager, null)
     }
 }

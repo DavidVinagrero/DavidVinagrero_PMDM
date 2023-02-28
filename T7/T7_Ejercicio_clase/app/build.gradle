@@ -32,6 +32,7 @@ android {
     viewBinding{
         enabled = true
     }
+    namespace 'com.example.t7_ejercicio_clase'
 }
 
 dependencies {
