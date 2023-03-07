@@ -8,20 +8,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.ejerciciodialogos.R
 
 class DialogoComunica: DialogFragment() {
 
-    private lateinit var nombreRecuperado: String
-    private lateinit var horaRecuperada: String
+    private var nombreRecuperado: String = ""
+    private var horaRecuperada: String = ""
     private var fechaRecuperada: String = "NA"
 
-    private lateinit var textoConfirmacion: EditText
+    private lateinit var textoConfirmacion: TextView
     private lateinit var botonConfirmacion: Button
     private lateinit var vista: View
+    private lateinit var listener: OnComunicaListener
 
+    interface OnComunicaListener {
+        fun onDialogoComunicaListener()
+    }
 
+    override fun onStart() {
+        super.onStart()
+        botonConfirmacion = vista.findViewById(R.id.boton_confirmacion)
+
+    }
 
     companion object{
         fun newInstance(nombre: String, hora: String, fecha: String): DialogoComunica {
@@ -38,21 +48,26 @@ class DialogoComunica: DialogFragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         vista = LayoutInflater.from(context).inflate(R.layout.dialogo_perso_comunica, null)
-
+        listener = context as OnComunicaListener
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        var builder = AlertDialog.Builder(requireActivity())
+        textoConfirmacion = vista.findViewById(R.id.texto_confirmacion)
+
+        var builder = AlertDialog.Builder(requireContext())
+        builder.setView(vista)
         nombreRecuperado = this.arguments?.get("nombre").toString()
         horaRecuperada = this.arguments?.get("hora").toString()
         fechaRecuperada = this.arguments?.get("fecha").toString()
-        textoConfirmacion.setText("Buenos días $nombreRecuperado, va ha registrar una respuesta el $fechaRecuperada a las $horaRecuperada, ¿Está seguro de querer continuar?")
+        textoConfirmacion.text = "Buenos días $nombreRecuperado, va ha registrar una respuesta el $fechaRecuperada a las $horaRecuperada, ¿Está seguro de querer continuar?"
         return builder.create()
     }
 
-    override fun onStart() {
-        super.onStart()
-        textoConfirmacion = vista.findViewById(R.id.texto_confirmacion)
-        botonConfirmacion = vista.findViewById(R.id.boton_confirmacion)
+    override fun onResume() {
+        super.onResume()
+        botonConfirmacion.setOnClickListener{
+            listener.onDialogoComunicaListener()
+            dismiss()
+        }
     }
 }

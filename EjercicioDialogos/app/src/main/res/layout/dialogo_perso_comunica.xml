@@ -2,18 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="180dp"
+    android:padding="10dp"
     android:gravity="center">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buenos días Jsdfa, vas a registrar una respuesta el día 12434"
+        android:text="Ejemplo"
         android:id="@+id/texto_confirmacion"/>
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="Continuar"
         android:layout_marginTop="20dp"
         android:id="@+id/boton_confirmacion"/>

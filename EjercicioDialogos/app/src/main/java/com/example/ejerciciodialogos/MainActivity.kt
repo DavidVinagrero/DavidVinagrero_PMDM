@@ -9,20 +9,19 @@ import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TimePicker
-import com.example.ejerciciodialogos.dialogos.DialogoComunica
-import com.example.ejerciciodialogos.dialogos.DialogoFecha
-import com.example.ejerciciodialogos.dialogos.DialogoHora
-import com.example.ejerciciodialogos.dialogos.DialogoInicio
+import com.example.ejerciciodialogos.dialogos.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener,
-    TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener, DialogoInicio.OnInicioListener {
+    TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener,
+    DialogoInicio.OnInicioListener, DialogoComunica.OnComunicaListener, DialogoAsignaturas.OnAsignaturasSelected {
 
     private lateinit var botonCrear: Button
 
     private var horaSeleccionada: String = ""
     private var fechaSeleccionada: String = ""
     private var nombreApellidos: String = ""
+    private var asignaturasSeleccionadas: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,5 +64,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener,
         nombreApellidos = "$nombre $apellido"
         val dialogo = DialogoComunica.newInstance(nombreApellidos,horaSeleccionada,fechaSeleccionada)
         dialogo.show(supportFragmentManager, null)
+    }
+
+    override fun onDialogoComunicaListener() {
+        DialogoAsignaturas().show(supportFragmentManager, null)
+    }
+
+    override fun onDialogoAsignaturasSelected(asignaturas: String) {
+        asignaturasSeleccionadas = asignaturas
+        DialogoNota().show(supportFragmentManager,null)
     }
 }
