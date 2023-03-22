@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ejercicio_empresa</string>
+    <string-array name="trabajos">
+        <item>Administrativo</item>
+        <item>Comercial</item>
+        <item>Soporte</item>
+        <item>Infromática</item>
+    </string-array>
+</resources>

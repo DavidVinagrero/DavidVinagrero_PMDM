@@ -26,27 +26,26 @@ class DialogoNota : DialogFragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         vista = LayoutInflater.from(context).inflate(R.layout.dialogo_nota, null)
-        // listener = context as OnNotaSelected
+        listener = context as OnNotaSelected
     }
 
     override fun onStart() {
         super.onStart()
         notaInput = vista.findViewById(R.id.input_nota)
-        botonOk = vista.findViewById(R.id.boton_nota)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         var builder = AlertDialog.Builder(requireContext())
         builder.setView(vista)
-
+        botonOk = vista.findViewById(R.id.boton_nota)
         return builder.create()
     }
 
     override fun onResume() {
         super.onResume()
         botonOk.setOnClickListener {
-            // listener.onNotaDialogoSelected(notaInput.text.toString().toInt())
-            Log.v("Nota_input","Se ha introducido un "+notaInput.text.toString().toInt())
+                listener.onNotaDialogoSelected(notaInput.text.toString().toInt())
+                dismiss()
         }
     }
 }

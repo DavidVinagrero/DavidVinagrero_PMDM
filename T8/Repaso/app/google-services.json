@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "454595277381",
+    "firebase_url": "https://pmdmret-ligas-dve-default-rtdb.firebaseio.com",
+    "project_id": "pmdmret-ligas-dve",
+    "storage_bucket": "pmdmret-ligas-dve.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454595277381:android:9656e08c25aab85e35692c",
+        "android_client_info": {
+          "package_name": "com.example.repaso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454595277381-ut37sj05riumdnd7t4vn5ac3han52h9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs2808mB-Rch7W0QnGjGb9UEYjFyd3WgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454595277381-ut37sj05riumdnd7t4vn5ac3han52h9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

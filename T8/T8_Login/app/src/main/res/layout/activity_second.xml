@@ -4,12 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SecondActivity">
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="Agregar"
         android:id="@+id/boton_agregar"
-        android:text="Agregar"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="Consultar"
+        android:id="@+id/boton_consultar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
