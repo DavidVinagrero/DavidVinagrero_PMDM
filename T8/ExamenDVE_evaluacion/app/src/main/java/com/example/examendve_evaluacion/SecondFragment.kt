@@ -45,7 +45,7 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         database = Firebase.database("https://pmdmret-dve2023-default-rtdb.firebaseio.com/")
-        adaptadorProductos = AdaptadorProductos(ArrayList<Producto>(),)
+        adaptadorProductos = AdaptadorProductos(ArrayList<Producto>())
         binding.recycler.adapter = adaptadorProductos
         binding.recycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
